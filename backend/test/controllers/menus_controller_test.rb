@@ -8,31 +8,27 @@ class MenusControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get menus_url, as: :json
     assert_response :success
+
+    menus = JSON.parse(response.body)
+    assert_equal Menu.count, menus.size
   end
-
-  # test "should create menu" do
-  #   assert_difference("Menu.count") do
-  #     post menus_url, params: { menu: { name: @menu.name, price: @menu.price } }, as: :json
-  #   end
-
-  #   assert_response :created
-  # end
 
   test "should show menu" do
     get menu_url(@menu), as: :json
     assert_response :success
+
+    menu_response = JSON.parse(response.body)
+    assert_equal @menu.name, menu_response['name']
+    assert_equal @menu.price, menu_response['price']
   end
 
-  # test "should update menu" do
-  #   patch menu_url(@menu), params: { menu: { name: @menu.name, price: @menu.price } }, as: :json
-  #   assert_response :success
-  # end
+  test 'should return 404 when id is invalid' do
+    non_existent_menu_id = -1
 
-  # test "should destroy menu" do
-  #   assert_difference("Menu.count", -1) do
-  #     delete menu_url(@menu), as: :json
-  #   end
+    get menu_url(non_existent_menu_id), as: :json
+    assert_response :not_found
 
-  #   assert_response :no_content
-  # end
+    error_response = JSON.parse(response.body)
+    assert_equal 'Not Found', error_response['error']
+  end
 end
