@@ -17,6 +17,6 @@ What do we expect?
 
 
 What do we evaluate?
-We care about how you structure an application, how well you know the tools that are in use, and how clean and easy to understand your code.
+We care about how you structure an application, how well you know the tools that are in use, and how clean and easy to understand your code.g
 
 * ...
