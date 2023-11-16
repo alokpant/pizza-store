@@ -2,7 +2,7 @@ require "test_helper"
 
 class MenusControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @menu = menus(:one)
+    @menu = menus(:supreme)
   end
 
   test "should get index" do
