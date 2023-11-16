@@ -25,13 +25,13 @@ class MenusController < ApplicationController
   def prepare_params(params)
     params = params.permit(:id, :search, :order_by, :sort_by)
     params[:search] = params[:search]&.strip
-    params[:order_by] = params[:order_by].to_s == :ascending ? :asc : :desc
+    params[:order_by] = params[:order_by]&.to_sym == :ascending ? :asc : :desc
     params
   end
 
   def validate_params
     return true unless params[:order_by].present?
-    return false if [:ascending, :descending].include?(params[:order_by].to_s)
+    return false if [:ascending, :descending].include?(params[:order_by].to_sym)
 
     raise ArgumentError, "Invalid field for ordering: #{params[:order_by]}"
 
