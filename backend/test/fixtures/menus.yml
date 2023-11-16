@@ -1,9 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  price: 1.5
+buffalo_ranch_chicken:
+  name: Buffalo Ranch Chicken
+  price: 12.99
 
-two:
-  name: MyString
-  price: 1.5
+supreme:
+  name: Supreme
+  price: 10.99
+
+pesto_chicken:
+  name: Pesto Chicken
+  price: 15.99
