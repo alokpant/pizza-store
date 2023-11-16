@@ -2,9 +2,9 @@
 class MenuService
   def initialize; end
 
-  def execute(params)
+  def execute(params:)
     menus = Menu.all
-    menus = filter_by_name(menus, params[:name])
+    menus = filter_by_name(menus, params[:search])
     menus = sort_by(menus, params[:sort_by], params[:order_by])
   end
 
