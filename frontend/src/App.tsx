@@ -51,10 +51,11 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1>Menu App</h1>
-      <InputField search={formState.search} handleSearchChange={handleSearchChange} />
-      <MenuList menus={menus} />
+    <div className="card">
+      <div className='card-form'>
+        <InputField search={formState.search} handleSearchChange={handleSearchChange} />
+        <MenuList menus={menus} />
+      </div>
     </div>
   );
 }

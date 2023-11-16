@@ -5,9 +5,97 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f1f3fb;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.card {
+	margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 425px;
+	background-color: #FFF;
+	border-radius: 10px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	padding: 1rem 0 2rem;
+}
+
+.card-form {
+	padding: 0 1rem;
+}
+
+.input {
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	padding-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.input-label {
+	color: #8597a3;
+	position: absolute;
+	top: 1.5rem;
+	transition: .25s ease;
+}
+
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee;
+	font: inherit;
+	font-size: 1.125rem;
+	padding: .25rem 0;
+}
+
+.input-field:focus,
+.input-field:valid {
+  outline: 0;
+  border-bottom-color: #6658d3;
+}
+
+.input-field:focus +.input-label,
+.input-field:valid +.input-label {
+  color: #6658d3;
+  transform: translateY(-1.5rem);
+}
+
+.menu {
+  padding: 2rem 1rem 0;
+}
+
+.menu-item {
+  margin: 35px 0 0;
+  padding: 0;
+  font-size: 18px;
+  list-style: none;
+}
+
+.menu-item-name{
+  font-family: helvetica;
+  font-weight: bold;
+  border-bottom: 2px dotted rgb(213, 213, 213);
+}
+
+.menu-item-price{
+  float: right;
+  font-weight: bold;
+  font-family: arial;
+  margin-top: -22px;
+}
+
+.menu-input {
+  width: 100%;
+  background: #fff;
+  font: inherit;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+  border: 0;
+  outline: 0;
+  padding: 22px 18px;
 }

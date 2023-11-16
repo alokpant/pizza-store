@@ -11,9 +11,10 @@ interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ menu }) => {
   return (
-    <li>
-      <strong>{menu.name}</strong> - ${menu.price}
-    </li>
+    <li className="menu-item">
+      <div className="menu-item-name">{menu.name}</div>
+      <div className="menu-item-price">${Number.parseFloat(String(menu.price)).toFixed(2)}</div>
+  </li>
   );
 }
 

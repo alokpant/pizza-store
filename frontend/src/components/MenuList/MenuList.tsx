@@ -7,7 +7,7 @@ interface MenuListProps {
 
 const MenuList: React.FC<MenuListProps> = ({ menus }) => {
   return (
-    <ul>
+    <ul className="menu-item">
       {menus.map(menu => (
         <MenuItem key={menu.id} menu={menu} />
       ))}

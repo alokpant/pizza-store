@@ -7,14 +7,15 @@ interface InputFieldProps {
 
 const InputField: React.FC<InputFieldProps> = ({ handleSearchChange, search }) => {
   return (
-    <div>
-      <label htmlFor="search">Search:</label>
+    <div className="input">
       <input
         type="text"
-        id="search"
+        className="input-field"
         value={search ?? ''}
         onChange={handleSearchChange}
+        required
       />
+      <label className="input-label">Search</label>
     </div>
   );
 }
