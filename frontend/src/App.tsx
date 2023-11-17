@@ -25,7 +25,6 @@ function App() {
 
   useEffect(() => {
     const apiUrl = `http://localhost:3000/menus?${buildUrlParams(formState)}`;
-
     fetch(apiUrl)
       .then(response => {
         if (!response.ok) {
