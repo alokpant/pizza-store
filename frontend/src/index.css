@@ -98,15 +98,15 @@ code {
 
 .input-select__label {
   margin-bottom: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.725rem;
 }
 
 /*
   MENU ITEM STYLINGS
 */
 
-.menu {
-  padding: 2rem 1rem 0;
+.menu-list {
+  padding: 0 0 1rem 0;
 }
 
 .menu-item {
