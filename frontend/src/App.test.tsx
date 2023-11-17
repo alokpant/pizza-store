@@ -1,5 +1,6 @@
 import { render, screen, act, fireEvent } from '@testing-library/react';
 import App from './App';
+import fetch from 'jest-fetch-mock';
 
 describe('App Component', () => {
   const MOCK_DATA = [
