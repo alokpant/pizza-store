@@ -32,7 +32,10 @@ const InputSelect: React.FC<SelectInputProps> = (
   return (
     <div className="input-select">
       <label className='input-select__label'>{label}</label>
-      <select value={selectedOption} onChange={handleSelectChange} className='input-select__select'>
+      <select
+        value={selectedOption}
+        onChange={handleSelectChange}
+        className='input-select__select'>
         {options.map(option => (
           <option key={option.value} value={option.value}>
             {option.text}
