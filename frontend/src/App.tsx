@@ -1,7 +1,14 @@
 import { useState, useEffect } from 'react';
 import MenuList from './components/MenuList/MenuList';
 import InputField from './components/InputField/InputField';
+import InputSelect from './components/InputSelect/InputSelect';
 import { buildUrlParams } from './helpers/utils';
+
+export interface FormState {
+  search?: string,
+  sort_by: string,
+  order_by: string
+}
 
 function App() {
   const [menus, setMenus] = useState<Array<{
@@ -34,12 +41,16 @@ function App() {
       });
   }, [formState, refetchCounter]);
 
-  const handleSortOrderChange: React.ChangeEventHandler<HTMLInputElement> = event => {
-    handleChange({ sort_by: event.target.value });
+  const handleSortOrderChange = (value: string) => {
+    handleChange({ sort_by: value });
   };
 
   const handleSearchChange: React.ChangeEventHandler<HTMLInputElement> = event => {
     handleChange({ search: event.target.value });
+  };
+
+  const handleSortDirectionChange = (value: string) => {
+    handleChange({ order_by: value });
   };
 
   const handleChange = (param: Record<string, string>) => {
@@ -53,7 +64,33 @@ function App() {
   return (
     <div className="card">
       <div className='card-form'>
-        <InputField search={formState.search} handleSearchChange={handleSearchChange} />
+        <div className='card-header'>
+          <InputField search={formState.search} handleSearchChange={handleSearchChange} />
+          <InputSelect
+            type='sort_by'
+            formState={formState}
+            options={
+              [
+                {value: 'name', text: 'Name'},
+                {value: 'price', text: 'Price'},
+              ]
+            }
+            label='Sort by'
+            callBack={handleSortOrderChange}
+          />
+          <InputSelect
+            type='order_by'
+            formState={formState}
+            options={
+              [
+                {value: 'ascending', text: 'Asc'},
+                {value: 'descending', text: 'Desc'},
+              ]
+            }
+            label='Order by'
+            callBack={handleSortDirectionChange}
+          />
+        </div>
         <MenuList menus={menus} />
       </div>
     </div>

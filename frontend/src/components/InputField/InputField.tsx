@@ -10,17 +10,14 @@ const InputField: React.FC<InputFieldProps> = ({ handleSearchChange, search }) =
     <div className="input">
       <input
         type="text"
-        className="input-field"
+        className="input__field"
         value={search ?? ''}
         onChange={handleSearchChange}
         required
       />
-      <label className="input-label">Search</label>
+      <label className="input__label">Search</label>
     </div>
   );
 }
 
 export default InputField;
-
-
-
