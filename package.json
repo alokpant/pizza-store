@@ -1,0 +1,8 @@
+{
+  "name": "store-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd frontend && npm run start"
+  }
+}
