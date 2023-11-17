@@ -41,18 +41,6 @@ function App() {
       });
   }, [formState, refetchCounter]);
 
-  const handleSortOrderChange = (value: string) => {
-    handleChange({ sort_by: value });
-  };
-
-  const handleSearchChange: React.ChangeEventHandler<HTMLInputElement> = event => {
-    handleChange({ search: event.target.value });
-  };
-
-  const handleSortDirectionChange = (value: string) => {
-    handleChange({ order_by: value });
-  };
-
   const handleChange = (param: Record<string, string>) => {
     setFormState({
       ...formState,
@@ -65,7 +53,7 @@ function App() {
     <div className="card">
       <div className='card-form'>
         <div className='card-header'>
-          <InputField search={formState.search} handleSearchChange={handleSearchChange} />
+          <InputField search={formState.search} callBack={(value) => handleChange({ search: value })} />
           <InputSelect
             type='sort_by'
             formState={formState}
@@ -76,7 +64,7 @@ function App() {
               ]
             }
             label='Sort by'
-            callBack={handleSortOrderChange}
+            callBack={(value) => handleChange({ sort_by: value })}
           />
           <InputSelect
             type='order_by'
@@ -88,7 +76,7 @@ function App() {
               ]
             }
             label='Order by'
-            callBack={handleSortDirectionChange}
+            callBack={(value) => handleChange({ order_by: value })}
           />
         </div>
         <MenuList menus={menus} />

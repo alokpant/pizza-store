@@ -116,13 +116,13 @@ code {
   list-style: none;
 }
 
-.menu-item-name{
+.menu-item__name{
   font-family: helvetica;
   font-weight: bold;
   border-bottom: 2px dotted rgb(213, 213, 213);
 }
 
-.menu-item-price{
+.menu-item__price{
   float: right;
   font-weight: bold;
   font-family: arial;
