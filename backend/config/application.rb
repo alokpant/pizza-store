@@ -31,7 +31,7 @@ module StoreBackend
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:8080'
+        origins 'http://localhost:8080', 'https://pizza-store-frontend-7ebb0a0c1b6c.herokuapp.com/'
         resource '*', headers: :any, methods: [:get, :head]
       end
     end
